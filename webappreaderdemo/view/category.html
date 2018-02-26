@@ -1,0 +1,75 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>书籍详情</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/static/css/all.css"> -->
+	<style type="text/css">
+		.main{
+			padding: 5px 10px 10px 10px;
+			background-color: #fff;
+		}
+		.title{
+			border-bottom: 2px solid #eee;
+			line-height: 2.4em;
+			margin-top: 5px;
+		}
+		.title h1{
+			font-size: 16px;
+			color: #8a8d8e;
+			margin-left: 20px;
+			font-weight: 400;
+		}
+		.cnt{
+			margin-top: 15px;
+			background-color: #eee;
+			border-radius: 1px;
+			padding: 5% 0 5% 2%;
+			background-position: center;
+		}
+		.cnt-title{
+			font-size: 13px;
+			line-height: 16px;
+		}
+		.cnt-count{
+			font-size: 11px;
+			line-height: 1;
+			color: #999;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" style="width: {{screen_width}}px;overflow: hidden;">
+		<% include include/common-header.html %>
+		<div class="container-scroll" style="width: {{screen_width}}px">
+			<div class="rank-page">
+				<section class="main">
+						<div class="title">
+							<h1>网文男频</h1>
+						</div>
+						<div class="cnt" v-for="section in male" style="background-image:url({{section.new_image}}!m);">
+							<h3 class="cnt-title">{{section.label}}</h3>
+							<p class="cnt-count">{{section.fiction_count}}</p>
+						</div>
+				</section>
+				<section class="main" >
+						<div class="title">
+							<h1>网文女频</h1>
+						</div>
+						<div class="cnt" v-for="section in female" style="background-image: url({{section.new_image}}!m);">
+							<h3 class="cnt-title">{{section.label}}</h3>
+							<p class="cnt-count">{{section.fiction_count}}</p>
+						</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<script src="/static/script/zepto.js"></script>
+    <script src="/static/script/vue.js"></script>
+	<script type="text/javascript" src="/static/script/pages/category.js"></script>
+</body>
+
+</html>

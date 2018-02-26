@@ -1,0 +1,109 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>书籍详情</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/static/css/all.css"> -->
+	<style type="text/css">
+		.main{
+			border-bottom: 10px solid #f5f5f5;
+			background-color: #fff;
+		}
+		.main-title{
+			border-left: 6px solid #ffab18;
+			line-height: 2.5;
+			border-bottom: 1px solid #f5f5f5;
+		}
+		.main-title h3{
+			font-size: 16px;
+			font-weight: normal;
+			margin-left: 15px;
+			text-align: left;
+		}
+		.main-content{
+			padding: 10px 0;
+			border-bottom: 1px solid #f5f5f5;
+		}
+		.cnt-ul li{
+			overflow: hidden;
+		}
+		.cover{
+			width: 100%;
+			height: 100%;
+		}
+		.box-cover{
+			border: 1px solid #f5f5f5;
+			box-shadow: 0px 6px 15px -3px #aaa;
+			border-bottom: none;
+			border-radius: 1px;
+			float: left;
+			margin-left: 10px;
+			margin-right: 10px;
+			width: 6.5rem;
+			height: 9rem;
+		}
+		.info{
+			padding-top: 1rem;
+		}
+		.title{
+			font-size: 16px;
+			font-weight: normal;
+			color: #333;
+			margin-bottom: 4px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.summary{
+			overflow: hidden;
+			margin: 12px 0 4px;
+			font-size: 13px;
+			line-height: 1.6em;
+			color: #888;
+			text-overflow: ellipsis;
+			height: 3.2em;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+		}
+		.author{
+			font-size: 12px;
+			color: #8d8d8d;
+			margin-top: 4px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" style="width: {{screen_width}}px;overflow: hidden;">
+		<% include include/common-header.html %>
+		<div class="container-scroll" style="width: {{screen_width}}px">
+			<div class="female-page">
+				<section class="main" v-for="section in items">
+					<div class="main-title">
+						<h3>{{section.ad_name}}</h3>
+					</div>
+					<div class="main-content" v-for="cnt in section.data.data">
+						<ul class="cnt-ul">
+							<li>
+								<div class="box-cover"><img alt="{{cnt.title}}" class="cover" v-bind:src="cnt.cover"></div>
+								<div class="info">
+									<h3 class="title">{{cnt.title}}</h3>
+									<p class="summary">{{cnt.summary}}</p>
+									<p class="author">{{cnt.authors}}</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<script src="/static/script/zepto.js"></script>
+    <script src="/static/script/vue.js"></script>
+	<script type="text/javascript" src="/static/script/pages/channel.js"></script>
+</body>
+
+</html>

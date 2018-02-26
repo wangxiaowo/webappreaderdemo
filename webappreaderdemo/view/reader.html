@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/reader.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root" class="container">
+        <div class="m-artical-action">
+            <div class="artical-action-mid" id="action_mid"></div>
+        </div>
+        <div id="top-nav" class="top-nav" style="display: none">
+            <div class="icon-back"></div>
+            <div class="nav-title">返回书架</div>
+        </div>
+        <div id="fiction_chapter_title"></div>
+        <div id="fiction_container" class="m-read-content">
+            
+        </div>
+        <div class="m-button-bar">
+            <ul class="u-tab">
+                <li id="prev_button">上一页</li>
+                <li id="next_button">下一页</li>
+            </ul>
+        </div>
+        <div class="nav-pannel-bk font-container" style="display: none"></div>
+        <div class="nav-pannel font-container" style="display: none">
+            <div class="child-mod">
+                <span>字号</span>
+                <button id="large-font" class="font-size-button">大</button>
+                <button id="small-font" class="font-size-button">小</button>
+            </div>
+            <div class="child-mod">
+                <span>背景</span>
+                <div class="bk-container bkbright">
+                    <div class="bk-container-current" style="display: none"></div>
+                </div>
+                <div class="bk-container bkpink">
+                    <div class="bk-container-current"></div>
+                </div>
+                <div class="bk-container bkgray">
+                    <div class="bk-container-current"></div>
+                </div>
+                <div class="bk-container bkgreen">
+                    <div class="bk-container-current"></div>
+                </div>
+                <div class="bk-container bkblue">
+                    <div class="bk-container-current"></div>
+                </div>
+                <div class="bk-container bkdark">
+                    <div class="bk-container-current"></div>
+                </div>
+            </div>
+        </div>
+        <div class="botton-bar bottom_nav" style="display: none">
+            <ul class="botton-bar-ul">
+                <li id="content_button">
+                    <div></div>目录
+                </li>
+                <li id="font_button" class="font-button">
+                    <div></div>字体
+                </li>
+                <li id="nignt_button">
+                    <div></div>夜间
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="/static/script/zepto.js"></script>
+    <script>
+        window.jQuery = $;
+    </script>
+    <script src="/static/script/jquery.base64.js"></script>
+    <script src="/static/script/jquery.jsonp.js"></script>
+    <script src="/static/script/reader.js"></script>
+
+</body>
+</html>
